@@ -4,20 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Meses e anos</title>
+    <title>Dropdown Ano e Mês</title>
 </head>
 <body>
     <div class="dropdown">
-        <div class="dropdown-bar" onclick="toggleDropdown()">Selecionar Ano/Mês</div>
-        <div class="dropdown-content">
-            <!-- Anos e meses serão inseridos aqui dinamicamente -->
-        </div>
+        <div class="dropdown-bar" onclick="toggleDropdown('year')">Selecione o Ano</div>
+        <div id="year-dropdown" class="dropdown-menu"></div>
     </div>
 
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js">
-        
-    </script>
+    <div class="dropdown" id="month-container" style="display: none;">
+        <div class="dropdown-bar" onclick="toggleDropdown('month')">Selecione o Mês</div>
+        <div id="month-dropdown" class="dropdown-menu"></div>
+    </div>
 
+    <div class="form-section" style="display: none;" id="form-section">
+        <h2>Gerar PDF</h2>
+        <form id="image-form">
+            <label for="image-input">Escolha uma imagem:</label>
+            <input type="file" id="image-input" accept="image/*" multiple>
+            <button type="button" id="generate-pdf">Gerar PDF</button>
+        </form>
+        <div id="preview"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

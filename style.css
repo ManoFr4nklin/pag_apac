@@ -5,7 +5,7 @@ body {
 .dropdown {
     position: relative;
     width: 300px;
-    margin: 50px auto;
+    margin: 20px auto;
 }
 
 .dropdown-bar {
@@ -23,36 +23,43 @@ body {
     background-color: #001ed9;
 }
 
-.dropdown-content {
+.dropdown-menu {
     display: none;
     background-color: #f9f9f9;
-    position: relative;
+    position: absolute;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
     margin-top: 5px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-    opacity: 0;
 }
 
-.dropdown-content.show {
+.dropdown-menu.show {
     display: block;
-    max-height: 500px;
-    opacity: 1;
 }
 
-.dropdown-content div,
-.dropdown-content a {
+.dropdown-item {
     padding: 10px 16px;
-    text-decoration: none;
-    color: black;
-    display: block;
+    cursor: pointer;
     transition: background-color 0.3s ease;
+    color: black;
 }
 
-.dropdown-content div:hover,
-.dropdown-content a:hover {
+.dropdown-item:hover {
     background-color: #f1f1f1;
+}
+
+.form-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#image-form {
+    margin-bottom: 20px;
+}
+
+#preview img {
+    max-width: 200px;
+    margin: 10px;
 }
